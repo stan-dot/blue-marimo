@@ -1,0 +1,14 @@
+FROM ghcr.io/marimo-team/marimo:0.13.5
+
+# Install any additional dependencies here
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    gcc \
+    g++ \
+    # rm -rf /var/lib/apt/lists/*
+    # libmagic1 \
+
+RUN pip install bluesky dls-dodal 
+
+CMD ["marimo", "edit", "--no-token", "-p", "8081", "--host", "0.0.0.0"]

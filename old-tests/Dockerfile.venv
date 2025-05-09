@@ -1,0 +1,22 @@
+FROM ghcr.io/marimo-team/marimo:0.13.5
+
+# Install any additional dependencies here
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    gcc \
+    g++ 
+    # rm -rf /var/lib/apt/lists/*
+    # libmagic1 \
+
+RUN python -m venv /opt/venv
+RUN . /opt/venv/bin/activate && \
+    pip install --upgrade pip
+
+RUN pip install bluesky dls-dodal marimo
+
+RUN which marimo > /tmp/which.txt
+RUN cat /tmp/which.txt
+RUN echo "PATH=$PATH" > /tmp/path.txt
+
+CMD ["marimo", "edit", "--no-token", "-p", "8082", "--host", "0.0.0.0"]

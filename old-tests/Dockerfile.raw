@@ -1,0 +1,7 @@
+FROM ghcr.io/marimo-team/marimo:0.13.5
+
+# Install any additional dependencies here
+
+CMD ["marimo", "edit", "--no-token", "-p", "8080", "--host", "0.0.0.0"]
+# remember to run in podman with "--network host"
+
