@@ -12,6 +12,9 @@ both the deps and venv approaches worked to import dodal, but it's the main vers
 
 `pip install git+http://github.com/DiamondLightSource/dodal@i20_1_add_panda_and_motors`
 
+for installation in the marimo gui
+`git+http://github.com/DiamondLightSource/dodal@i20_1_add_panda_and_motors`
+
 might need to isntall git manutally into the container
 
 ### venv ultimately best to handle from the GUI
